@@ -51,14 +51,14 @@ public class OSGB36 {
     double[] cartesian =
         fromLatLon(
             new double[] {lat, lon, 0},
-            Constants.ELLIPSOID_GRS80_MAJORAXIS,
-            Constants.ELLIPSOID_GRS80_MINORAXIS);
+            Constants.ELLIPSOID_AIRY1830_MAJORAXIS,
+            Constants.ELLIPSOID_AIRY1830_MINORAXIS);
     double[] transformed = helmertTransformation(cartesian, -tX, -tY, -tZ, -s, -rX, -rY, -rZ);
     double[] ret =
         toLatLon(
             transformed,
-            Constants.ELLIPSOID_AIRY1830_MAJORAXIS,
-            Constants.ELLIPSOID_AIRY1830_MINORAXIS,
+            Constants.ELLIPSOID_GRS80_MAJORAXIS,
+            Constants.ELLIPSOID_GRS80_MINORAXIS,
             0.00000001);
 
     return new double[] {ret[0], ret[1]};
