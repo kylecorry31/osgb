@@ -24,16 +24,16 @@ import static uk.gov.dstl.geo.osgb.CartesianConversion.*;
  * https://www.ordnancesurvey.co.uk/documents/resources/guide-coordinate-systems-great-britain.pdf
  */
 public class OSGB36 {
-  private static double tX = -446.448;
-  private static double tY = 125.157;
-  private static double tZ = -542.060;
-  private static double s =
+  private static final double tX = -446.448;
+  private static final double tY = 125.157;
+  private static final double tZ = -542.060;
+  private static final double s =
       20.4894 / 1000000; // Value given by OS in ppm, so convert to a unitless quantity
-  private static double rX =
+  private static final double rX =
       -0.1502 * (Math.PI / 648000); // Value given by OS in arcseconds, so convert to radians
-  private static double rY =
+  private static final double rY =
       -0.2470 * (Math.PI / 648000); // Value given by OS in arcseconds, so convert to radians
-  private static double rZ =
+  private static final double rZ =
       -0.8421 * (Math.PI / 648000); // Value given by OS in arcseconds, so convert to radians
 
   private OSGB36() {
@@ -65,7 +65,7 @@ public class OSGB36 {
   }
 
   /**
-   * Convert from WGS86 Lat Lon to OSBG.
+   * Convert from WGS86 Lat Lon to OSGB.
    *
    * @param lat Latitude in WGS84 coordinates
    * @param lon Longitude in WGS84 coordinates
